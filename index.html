@@ -12,43 +12,42 @@
 </head>
 <body>
     
-    <h1>Kallol</h1>
-    <h2>kallol</h2>
-    const express = require('express');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const bodyParser = require('body-parser');
-
-const app = express();
-const PORT = 3000;
-const SECRET_KEY = 'your_secret_key';
-
-// Dummy user data (Replace with database in real-world scenario)
-const users = [{ username: 'testUser', password: '$2b$10$someHashedPasswordHere' }];
-
-app.use(bodyParser.json());
-
-// Login Route
-app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    <section>
+        <div class="relative flex justify-center mt-10">
+            <img class=" w-48 absolute " src="./assets/image/Rectangle 1.png" alt="">
+            <img class=" mt-10" src="./assets/image/Group.png" alt="">
+        </div>
+       <!-- login form -->
+             <div class="hero">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                 
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Acount Number</span>
+                        </label>
+                        <input type="text" value="01705132021" placeholder="Number" id="acount-number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Password</span>
+                        </label>
+                        <input type="password" value="1234" placeholder="password" class="input input-bordered" id="password" required />
+                        <label class="label">
+                          <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                        </label>
+                      </div>
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary" id="login-btn">Login</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div> 
+    </section>
+ 
     
-    const user = users.find(u => u.username === username);
-    if (!user) {
-        return res.status(400).json({ message: 'User not found' });
-    }
-    
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-        return res.status(400).json({ message: 'Invalid credentials' });
-    }
-    
-    const token = jwt.sign({ username: user.username }, SECRET_KEY, { expiresIn: '1h' });
-    res.json({ message: 'Login successful', token });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
     <script src="./js/login.js"></script>
 </body>
