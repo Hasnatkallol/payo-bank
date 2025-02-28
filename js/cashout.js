@@ -6,6 +6,7 @@ document.getElementById('cash-out').addEventListener('click',function(e){
     let convertPin = convertValue('pinInput');
     let convertAcountNumber = document.getElementById('acount-number').value;
     let currentTime = new Date().toLocaleTimeString();
+    let transactionId = randaomTransactionId();
 
     if( mainBalance < convertCashAmount){
         alert("Invalid Amount")
@@ -26,6 +27,7 @@ document.getElementById('cash-out').addEventListener('click',function(e){
                  <div>
                     <div>
                        <h1>Cash Out ${convertCashAmount} Acount Number : ${convertAcountNumber}</h1>
+                         <p class = "text-red-300">Transaction Id: ${transactionId}</p>
                          <p>Time : ${currentTime}</p>
                     </div>
                   </div>

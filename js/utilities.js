@@ -20,12 +20,10 @@ document.getElementById(id).innerText = value;
 }
 
 
-// function setTimeValue(){
-  
-// const currentTime = new Date().toLocaleTimeString(); 
-// let time = document.getElementById("timeDisplay").textContent = `Clicked at: ${currentTime}`;
-// return time ;
-// }
+function randaomTransactionId(){
+    let randomNumber = Math.floor( Math.random() * 100 ) + 1
+    return randomNumber ;
+}
 
 
 
